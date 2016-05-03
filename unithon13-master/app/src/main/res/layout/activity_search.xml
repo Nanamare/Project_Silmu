@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="64dp"
+        android:orientation="horizontal"
+        android:background="#F2F5F5"
+        android:id="@+id/linearLayout"
+        android:weightSum="1">
+
+        <ImageView
+            android:layout_marginLeft="20dp"
+            android:layout_width="10.67dp"
+            android:layout_height="32dp"
+            android:src="@drawable/glasses"
+            android:layout_weight="0.07"
+            android:layout_gravity="center_vertical"/>
+
+        <EditText
+            android:layout_marginLeft="32.67dp"
+            android:id="@+id/input_edt"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="키워드 입력"
+            android:layout_gravity="center_vertical">
+
+            <requestFocus />
+        </EditText>
+
+    </LinearLayout>
+
+
+    <ListView
+        android:id="@+id/lv_list"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_below="@+id/linearLayout"
+        android:dividerHeight="0dp"/>
+
+    <kr.co.unithon.unithon13.SideSelector
+        android:id="@+id/side_selector"
+        android:layout_width="30dp"
+        android:layout_height="match_parent"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/linearLayout"/>
+
+</RelativeLayout>

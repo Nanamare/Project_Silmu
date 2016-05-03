@@ -1,0 +1,370 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:showIn="@layout/activity_result"
+    tools:context=".ResultActivity">
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/relativeLayout"
+        android:paddingTop="32.33dp"
+        android:paddingBottom="44.67dp">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/linearLayout"
+            android:layout_alignParentTop="false"
+            android:layout_toLeftOf="@+id/linearLayout4"
+            android:layout_below="@+id/linearLayout4"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginTop="5.67dp">
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="출발역"
+                android:id="@+id/textView3"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:allowUndo="false"
+                android:layout_gravity="center_horizontal"
+                android:textSize="13sp"
+                android:textColor="#949292"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="홍대입구"
+                android:id="@+id/src_stn_label"
+                android:layout_gravity="center_horizontal"
+                android:textSize="18sp"
+                android:textColor="#000"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/linearLayout2"
+            android:layout_alignParentTop="false"
+            android:layout_toRightOf="@+id/stncnt_section"
+            android:layout_below="@+id/dst_stn_pin"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="5.67dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="도착역"
+                android:id="@+id/textView4"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true"
+                android:layout_gravity="center_horizontal"
+                android:textSize="13sp"
+                android:textColor="#949292"/>
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="강남"
+                android:id="@+id/dst_stn_label"
+                android:layout_gravity="center_horizontal"
+                android:textSize="18sp"
+                android:textColor="#000"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@+id/stncnt_section"
+            android:layout_marginTop="4dp"
+            android:id="@+id/linearLayout4">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="56"
+                android:id="@+id/travel_time_label"
+                android:layout_below="@+id/travel_cnt_label"
+                android:layout_centerHorizontal="true"
+                android:textSize="16sp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="분 소요"
+                android:id="@+id/textView2"
+                android:textSize="16sp"
+                android:textColor="#949292"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:id="@+id/stncnt_section"
+            android:layout_marginTop="8dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="14"
+                android:id="@+id/travel_cnt_label"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:textSize="16sp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="개 정거장"
+                android:id="@+id/textView"
+                android:layout_alignParentTop="true"
+                android:layout_toRightOf="@+id/travel_cnt_label"
+                android:layout_toEndOf="@+id/travel_cnt_label"
+                android:textSize="16sp"
+                android:textColor="#949292"/>
+        </LinearLayout>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/src_stn_pin"
+            android:src="@drawable/pin_line_1"
+            android:layout_gravity="center_horizontal"
+            android:layout_alignBottom="@+id/linearLayout4"
+            android:layout_toLeftOf="@+id/stncnt_section"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"/>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/dst_stn_pin"
+            android:src="@drawable/pin_line_b"
+            android:layout_gravity="center_horizontal"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignLeft="@+id/linearLayout2"
+            android:layout_alignStart="@+id/linearLayout2"/>
+    </RelativeLayout>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/relativeLayout"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:weightSum="1"
+        android:id="@+id/linearLayout3"
+        android:paddingLeft="14.67dp"
+        android:paddingRight="14.67dp">
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="9dp">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/imageView4"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true"
+                android:src="@drawable/ic_clock"
+                android:layout_gravity="center_vertical"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="탑승시간선택"
+                android:id="@+id/textView5"
+                android:textColor="#424145"
+                android:textSize="18sp"
+                android:layout_marginLeft="5dp"/>
+        </LinearLayout>
+
+        <View
+            android:background="#e6e6e6"
+            android:layout_height="2px"
+            android:layout_width="match_parent"
+            android:layout_below="@+id/section_arriaval"
+            />
+
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="189dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal">
+
+            <NumberPicker
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/picker_daynight"
+                android:orientation="vertical"
+                tools:layout_height="40dp"
+                android:showDividers="middle"/>
+
+
+            <NumberPicker
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/picker_hour"
+                android:orientation="vertical"
+                tools:layout_height="40dp"
+                android:showDividers="middle"/>
+
+            <NumberPicker
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/picker_minute"
+                android:orientation="vertical"
+                tools:layout_height="40dp"
+                android:showDividers="middle"/>
+
+
+        </LinearLayout>
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingTop="37.67dp">
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/section_arriaval"
+                android:layout_marginBottom="9dp">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/imageView5"
+                    android:src="@drawable/ic_clock"
+                    android:layout_gravity="center_vertical"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:text="도착예정시간"
+                    android:id="@+id/textView6"
+                    android:paddingRight="10dp"
+                    android:layout_alignParentTop="true"
+                    android:layout_toRightOf="@+id/imageView5"
+                    android:layout_toEndOf="@+id/imageView5"
+                    android:textColor="#424145"
+                    android:textSize="18sp"
+                    android:layout_marginLeft="5dp"/>
+            </LinearLayout>
+
+            <View
+                android:background="#e6e6e6"
+                android:layout_height="2px"
+                android:layout_width="match_parent"
+                android:layout_below="@+id/section_arriaval"
+                android:id="@+id/view"/>
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/view"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentLeft="false"
+                android:layout_alignParentRight="true"
+                android:paddingTop="17dp"
+                android:paddingBottom="42dp">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/imageView3"
+                    android:layout_alignTop="@+id/view"
+                    android:layout_toLeftOf="@+id/arrival_time_label"
+                    android:layout_toStartOf="@+id/arrival_time_label"
+                    android:src="@drawable/ic_arrow_forward"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginRight="9.33dp"/>
+
+                <TextView
+                    android:gravity="center"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:text="오후"
+                    android:id="@+id/arrival_daynight_label"
+                    android:layout_alignParentRight="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_below="@+id/section_arriaval"
+                    android:textSize="28sp"
+                    android:textColor="#a7a7a7"
+                    android:layout_marginRight="9.33dp"/>
+
+                <TextView
+                    android:gravity="center"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:text="12:00"
+                    android:id="@+id/arrival_time_label"
+                    android:layout_alignParentRight="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_below="@+id/section_arriaval"
+                    android:textSize="28sp"
+                    android:textColor="#000"/>
+            </LinearLayout>
+        </RelativeLayout>
+
+    </LinearLayout>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/btn_confirm"
+        android:background="@drawable/bg_btn_path"
+        android:layout_below="@+id/linearLayout3"
+        android:layout_centerHorizontal="true"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginBottom="12dp"/>
+        </LinearLayout>
+    </ScrollView>
+</RelativeLayout>

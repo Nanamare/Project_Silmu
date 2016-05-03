@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:weightSum="1">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingTop="38.67dp">
+
+            <ImageView
+                android:layout_width="15.33dp"
+                android:layout_height="13.67dp"
+                android:background="@drawable/leftarrow"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="22.67dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:gravity="center"
+                android:text="버스 도착 검색"
+                android:textSize="18sp"
+                android:layout_marginLeft="2dp"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="90dp"
+            android:orientation="horizontal"
+            android:layout_marginTop="10.33dp"
+            android:layout_marginLeft="19dp"
+            android:id="@+id/src_stn_section"
+            android:gravity="center">
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:background="@drawable/startbtn"
+                android:textSize="25dp"
+                android:textColor="#ffffff"
+                android:text="버스 검색"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <Button
+        android:layout_width="335.33dp"
+        android:layout_height="56.6dp"
+        android:id="@+id/btn_find_path"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="12.67dp"
+        tools:layout_marginBottom="54dp"
+        android:paddingRight="1dp"
+        android:layout_marginLeft="12.33dp"
+        android:layout_marginRight="12.33dp"
+        android:textColor="#ffffff"
+        android:layout_marginTop="190.67dp"
+        android:background="@drawable/pathset"
+        android:layout_centerHorizontal="true"/>
+
+</RelativeLayout>
