@@ -1,5 +1,7 @@
 package kr.co.unithon.unithon13;
 
+import android.os.Bundle;
+
 import android.annotation.TargetApi;
 import android.app.AlarmManager;
 import android.app.PendingIntent;
@@ -31,12 +33,17 @@ import java.util.Map;
 import java.util.TimeZone;
 
 import kr.co.unithon.unithon13.model.PathResult;
+import kr.co.unithon.unithon13.model.Result;
 import kr.co.unithon.unithon13.model.SwStation;
 
 public class ResultActivity extends AppCompatActivity {
     private static long  MIN_MILLISECONDS =60000;
+
+
     private static final String INTENT_ACTION = "알람테스트";
-    private AlarmManager AM;
+    private AlarmManager mManager;
+    private  GregorianCalendar mCalendar;
+
     private Intent intent;
     private PendingIntent ServicPending;
     //MyListener myListener;
@@ -113,7 +120,9 @@ public class ResultActivity extends AppCompatActivity {
         dstStnPin = (ImageView)findViewById(R.id.dst_stn_pin);
 
         //mBtnConfirm.setOnClickListener(myListener);
-        AM = (AlarmManager) getSystemService(ALARM_SERVICE);
+        mManager = (AlarmManager) getSystemService(Context.ALARM_SERVICE);
+        mCalendar = new GregorianCalendar();
+        Log.i("ALARM",mCalendar.getTime().toString());
 
         mTravelCntLabel =(TextView)findViewById(R.id.travel_cnt_label);
         mTravelTimeLabel = (TextView)findViewById(R.id.travel_time_label);
@@ -191,7 +200,7 @@ public class ResultActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 NotiUtils.Notify(getApplication(), mSrcSwStation.getName(),mDstSwStation.getName(), arrivalTime.getTime(), arrivalTime.getTime()-currentTime.getTime());
-                Toast.makeText(ResultActivity.this,"알람이 설정되었습니다.",Toast.LENGTH_LONG).show();
+                setAlarm();
 
             }
         });
@@ -265,6 +274,19 @@ public class ResultActivity extends AppCompatActivity {
         }
         return hours;
     }
+    private void setAlarm(){
+
+        Toast.makeText(ResultActivity.this,"알람이 설정되었습니다.",Toast.LENGTH_LONG).show();
+        Intent intent = new Intent(this, Alarm.class);
+        PendingIntent pIntent = PendingIntent.getActivity(ResultActivity.this, 0, intent, 0);
+        // 1회 알람 시작
+        mManager.set(AlarmManager.RTC, System.currentTimeMillis() + arrivalTime.getTime()-currentTime.getTime(), pIntent);
+
+        //mManager.set(AlarmManager.RTC, System.currentTimeMillis() + 5000, pIntent);
+
+    }
+
+    /*
     private void setAlarm(Context context,long second) {
 
         AlarmManager alarmManager = (AlarmManager) context.getSystemService(Context.ALARM_SERVICE);
@@ -273,6 +295,7 @@ public class ResultActivity extends AppCompatActivity {
         alarmManager.set(AlarmManager.RTC, System.currentTimeMillis() + second, pIntent);
         alarmManager.cancel(pIntent);
     }
+    */
 /*
     class MyListener implements View.OnClickListener{
         @Override
