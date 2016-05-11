@@ -6,10 +6,15 @@
     android:orientation="vertical"
     tools:context=".BusResult">
 
-    <TextView
-        android:id="@+id/data"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
+    <Button android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="다운로드"
+        android:onClick="down"  />
+    <EditText android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:editable="false"
+        android:id="@+id/editText"
+        android:gravity="top"/>
 
 </LinearLayout>
 
