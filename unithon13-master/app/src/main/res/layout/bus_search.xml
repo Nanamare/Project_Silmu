@@ -43,6 +43,7 @@
             android:gravity="center">
 
             <Button
+                android:id="@+id/bus_num"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
@@ -59,7 +60,7 @@
     <Button
         android:layout_width="335.33dp"
         android:layout_height="56.6dp"
-        android:id="@+id/btn_find_path"
+        android:id="@+id/bus_find_path"
         android:layout_alignParentBottom="true"
         android:layout_marginBottom="12.67dp"
         tools:layout_marginBottom="54dp"

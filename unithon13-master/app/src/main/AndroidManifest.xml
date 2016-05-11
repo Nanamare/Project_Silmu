@@ -40,6 +40,17 @@
             android:screenOrientation="portrait">
         </activity>
 
+        <activity android:name=".BusResult"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:screenOrientation="portrait">
+        </activity>
+
+        <activity android:name=".BusSearch"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:screenOrientation="portrait">
+        </activity>
+
+
         <activity android:name=".SearchActivity"
                   android:theme="@style/AppTheme.NoActionBar"
                   android:screenOrientation="portrait"/>

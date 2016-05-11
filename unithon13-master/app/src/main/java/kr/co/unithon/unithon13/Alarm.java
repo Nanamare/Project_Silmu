@@ -52,6 +52,7 @@ public class Alarm extends Activity {
                 Toast.makeText(Alarm.this,"알람 종료 완료.",Toast.LENGTH_LONG).show();
                 mPlayer.stop();
                 mPlayer.release();
+                finish();
             }
         });
 
