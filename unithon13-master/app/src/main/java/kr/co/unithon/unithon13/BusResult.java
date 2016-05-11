@@ -67,9 +67,10 @@ public class BusResult extends Activity {
     public void down(View v){
         xManager = new XMLManager();//Util 객체 생성
         //xml 문서 다운받기(다운이 완료되었을때 메시지를 받아중 handler객체, 다운받을 url주소)
-        xManager.downLoadXML(handler, "http://www.kma.go.kr/weather/forecast/mid-term-xml.jsp?stnId=109");
+        xManager.downLoadXML(handler, "http://ws.bus.go.kr/api/rest/arrive/getArrInfoByRouteAll?ServiceKey=vZBThqOw53T9bJAs97F9pXl7HVr7TM6yZCMW%2BSkhdsCu7m9hJROUYNrr9%2FqUzRL5kA5rHRjGTX9Utyz3l6Vk8w%3D%3D&busRouteId=100100411&numOfRows=999&pageSize=999&pageNo=1&startPage=1");
         //http://ws.bus.go.kr/api/rest/buspos/getBusPosByRouteSt?ServiceKey=vZBThqOw53T9bJAs97F9pXl7HVr7TM6yZCMW%2BSkhdsCu7m9hJROUYNrr9%2FqUzRL5kA5rHRjGTX9Utyz3l6Vk8w%3D%3D&busRouteId=100100411&startOrd=1&endOrd=999&numOfRows=999&pageSize=999&pageNo=1&startPage=1
-
+        //사용할것은 아래
+        //http://ws.bus.go.kr/api/rest/arrive/getArrInfoByRouteAll?ServiceKey=vZBThqOw53T9bJAs97F9pXl7HVr7TM6yZCMW%2BSkhdsCu7m9hJROUYNrr9%2FqUzRL5kA5rHRjGTX9Utyz3l6Vk8w%3D%3D&busRouteId=100100411&numOfRows=999&pageSize=999&pageNo=1&startPage=1
     }
 
     //메세지를 전달 받을 핸들러 객체(문서 Thread 다운이 완료되면 이곳이 실행된다)
@@ -79,10 +80,12 @@ public class BusResult extends Activity {
             xml = xManager.getXML();
             StringBuffer sBuff = new StringBuffer();
             //num, name, addr 요소를 String[]에 담아 파싱하기
-            String[] tags = {"wf", "tmn", "tmx"};
+            //String[] tags = {"wf", "tmn", "tmx"};
+            String[] tags = {"rtNm","stNm","arrmsg1","arrmsg2"};
             ArrayList<HashMap<String, String>> list = xManager.parseForList(tags, xml);
             for(HashMap<String, String> tmp : list){
-                sBuff.append(tmp.get("wf")+"/"+tmp.get("tmn")+"/"+tmp.get("tmx")+"\n");
+                //sBuff.append(tmp.get("wf")+"/"+tmp.get("tmn")+"/"+tmp.get("tmx")+"\n");
+                sBuff.append(tmp.get("rtNm")+"번 버스"+tmp.get("stNm")+"\n"+tmp.get("arrmsg1")+"\n"+tmp.get("arrmsg2")+"\n");
             }
             editText.setText(sBuff.toString());
         }
