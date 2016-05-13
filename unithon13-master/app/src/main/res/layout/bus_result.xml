@@ -8,8 +8,9 @@
 
     <Button android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:text="다운로드"
-        android:onClick="down"  />
+        android:hint="버스 경로 API 받아오기"
+        android:onClick="down"
+        android:background="@drawable/background"/>
     <EditText android:layout_width="fill_parent"
         android:layout_height="fill_parent"
         android:editable="false"

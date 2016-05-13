@@ -1,6 +1,7 @@
 package kr.co.unithon.unithon13;
 
 import android.app.Activity;
+import android.graphics.Color;
 import android.media.AudioManager;
 import android.media.MediaPlayer;
 import android.media.RingtoneManager;
@@ -24,6 +25,7 @@ public class Alarm extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.alarm);
         mdbtn = (Button)findViewById(R.id.mediabtn);
+        mdbtn.setBackgroundColor(Color.TRANSPARENT);
         final MediaPlayer mPlayer = new MediaPlayer();         // 객체생성
 
 // TYPE_RINGTONE 을 하면 현재 설정되어 있는 밸소리를 가져온다.
