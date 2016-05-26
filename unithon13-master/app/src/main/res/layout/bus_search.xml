@@ -7,7 +7,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:weightSum="1">
+        android:weightSum="1"
+        android:id="@+id/linearLayout6">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -55,21 +56,28 @@
 
         </LinearLayout>
 
+
     </LinearLayout>
 
-    <Button
-        android:layout_width="335.33dp"
-        android:layout_height="56.6dp"
-        android:id="@+id/bus_find_path"
-        android:layout_alignParentBottom="true"
-        android:layout_marginBottom="12.67dp"
-        tools:layout_marginBottom="54dp"
-        android:paddingRight="1dp"
-        android:layout_marginLeft="12.33dp"
-        android:layout_marginRight="12.33dp"
-        android:textColor="#ffffff"
-        android:layout_marginTop="190.67dp"
-        android:background="@drawable/pathset"
-        android:layout_centerHorizontal="true"/>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_below="@+id/linearLayout6">
+
+        <ImageView
+            android:layout_marginTop="10dp"
+            android:id="@+id/recently_iv"
+            android:onClick="onClick"
+            android:background="@drawable/recent_stn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+
+    </LinearLayout>
+
+
+
+
 
 </RelativeLayout>

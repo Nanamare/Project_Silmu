@@ -238,11 +238,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 Intent start_intent = new Intent(this, SearchActivity.class);
                 startState = true;
                 startActivity(start_intent);
+                finish();
                 break;
             case R.id.arrival_btn: // When arrival button pressed, move SearchActivity
                 Intent arrival_intent = new Intent(this, SearchActivity.class);
                 arrivalState = true;
                 startActivity(arrival_intent);
+                finish();
                 break;
         }
     }

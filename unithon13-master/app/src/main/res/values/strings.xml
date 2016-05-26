@@ -1,7 +1,7 @@
 <resources>
 
-    <string name="app_name">Unithon</string>
-    <string name="app_name_ko">나..여기서 내려요</string>
+    <string name="app_name">저..여기서 내려요</string>
+    <string name="app_name_ko">저..여기서 내려요</string>
     <string name="action_settings">Settings</string>
     <string name="title_activity_result">경로 검색 결과</string>
     <string name="title_activity_main">역이름 입력</string>

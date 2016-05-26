@@ -1,12 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
-    <TextView
-        android:textSize="50dp"
-        android:layout_gravity="center_horizontal"
-        android:gravity="center_vertical"
-        android:text="추후버스검색화면"
+    <EditText
+        android:textSize="45dp"
+        android:hint="원하는 버스를 입력해주세요"
         android:layout_width="wrap_content"
-        android:layout_height="match_parent" />
-</LinearLayout>
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="100dp"
+        android:id="@+id/editText2" />
+
+    <Button
+        android:background="@drawable/background"
+        android:id="@+id/btn_intent"
+        android:onClick="onClicked"
+        android:textSize="40dp"
+        android:text="버스 노선 검색"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
+        android:layout_below="@+id/editText2" />
+</RelativeLayout>

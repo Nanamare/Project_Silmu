@@ -12,6 +12,7 @@ import android.util.Xml;
 import android.view.LayoutInflater;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
 import java.util.ArrayList;
@@ -57,7 +58,8 @@ import android.widget.EditText;
  */
 
 public class BusResult extends Activity {
-
+    EditText txt_main;
+    public final static String EXTRA_MESSAGE = "com.mycompany.myfirstapp.Message";
     /** Called when the activity is first created. */
     String busid;
     private ListView busListView = null;
@@ -83,12 +85,17 @@ public class BusResult extends Activity {
     //100100411
 
     public void down(View v){
-        String uri = "http://ws.bus.go.kr/api/rest/arrive/getArrInfoByRouteAll?ServiceKey=vZBThqOw53T9bJAs97F9pXl7HVr7TM6yZCMW%2BSkhdsCu7m9hJROUYNrr9%2FqUzRL5kA5rHRjGTX9Utyz3l6Vk8w%3D%3D&busRouteId=";
-        String routeid ="100100411";
-        String furi = "&startOrd=1&endOrd=999&numOfRows=999&pageSize=999&pageNo=1&startPage=1";
-        xManager = new XMLManager();//Util 객체 생성
+        Intent intent = new Intent(getApplicationContext(),BusListAdapter.class);
+        txt_main = (EditText) findViewById(R.id.txt_main);
+        String message = txt_main.getText().toString();
+        intent.putExtra(EXTRA_MESSAGE,message);
+        startActivity(intent);
+        //String uri = "http://ws.bus.go.kr/api/rest/arrive/getArrInfoByRouteAll?ServiceKey=vZBThqOw53T9bJAs97F9pXl7HVr7TM6yZCMW%2BSkhdsCu7m9hJROUYNrr9%2FqUzRL5kA5rHRjGTX9Utyz3l6Vk8w%3D%3D&busRouteId=";
+        //String routeid ="100100411";
+        //String furi = "&startOrd=1&endOrd=999&numOfRows=999&pageSize=999&pageNo=1&startPage=1";
+        //xManager = new XMLManager();//Util 객체 생성
         //xml 문서 다운받기(다운이 완료되었을때 메시지를 받아중 handler객체, 다운받을 url주소)
-        xManager.downLoadXML(handler,uri+routeid+furi);
+        //xManager.downLoadXML(handler,uri+routeid+furi);
         //http://ws.bus.go.kr/api/rest/buspos/getBusPosByRouteSt?ServiceKey=vZBThqOw53T9bJAs97F9pXl7HVr7TM6yZCMW%2BSkhdsCu7m9hJROUYNrr9%2FqUzRL5kA5rHRjGTX9Utyz3l6Vk8w%3D%3D&busRouteId=100100411&startOrd=1&endOrd=999&numOfRows=999&pageSize=999&pageNo=1&startPage=1
         //사용할것은 아래
         //http://ws.bus.go.kr/api/rest/arrive/getArrInfoByRouteAll?ServiceKey=vZBThqOw53T9bJAs97F9pXl7HVr7TM6yZCMW%2BSkhdsCu7m9hJROUYNrr9%2FqUzRL5kA5rHRjGTX9Utyz3l6Vk8w%3D%3D&busRouteId=100100411&numOfRows=999&pageSize=999&pageNo=1&startPage=1
@@ -130,8 +137,8 @@ public class BusResult extends Activity {
                 editText.setText(mbuslist.get(i).getArrmsg2());
             }
             */
-            Intent intent = new Intent(getApplicationContext(),BusListAdapter.class);
-            startActivity(intent);
+            //Intent intent = new Intent(getApplicationContext(),BusListAdapter.class);
+            //startActivity(intent);
         }
     };
     /*
