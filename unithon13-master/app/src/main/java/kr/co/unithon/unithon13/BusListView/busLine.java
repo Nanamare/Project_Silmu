@@ -5,12 +5,12 @@ package kr.co.unithon.unithon13.BusListView;
  */
 public class busLine {
     private String busRouteId;
-    private int busRouteNm;
-    public busLine(String busRouteId, int busRouteNm){
+    private String busRouteNm;
+    public busLine(String busRouteId, String busRouteNm){
         this.busRouteId = busRouteId;
         this.busRouteNm = busRouteNm;
     }
 
     public String getBusRouteId(){return busRouteId;};
-    public int getBusRouteNm(){return busRouteNm;};
+    public String getBusRouteNm(){return busRouteNm;};
 }

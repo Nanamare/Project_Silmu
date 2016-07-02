@@ -157,12 +157,13 @@ public class SearchActivity extends Activity {
 
             @Override
             public void onTextChanged(CharSequence arg0, int start, int after, int count) {
-
+                /*
                 Toast.makeText(
                       getApplicationContext(),
                       arg0.toString(),
                       Toast.LENGTH_SHORT
                       ).show();
+                */
                 adapter.getFilter().filter(arg0.toString());
 
             }
